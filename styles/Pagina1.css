@@ -1,0 +1,321 @@
+/* ========== VARIABLES DE COLOR ========== */
+:root {
+    --negroHumo: #0a0a0a;
+    --azulProfundo: #1a1a3e;
+    --rosaNeon: #ff006e;
+    --purpuraElectrico: #8338ec;
+    --verdeAcido: #06ffa5;
+    --doradoMetalico: #ffd60a;
+}
+
+/* ========== RESET Y BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, var(--negroHumo) 0%, var(--azulProfundo) 100%);
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ========== ISLA DE NAVEGACIÓN FLOTANTE ========== */
+.IslaPaginas {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 8px;
+    border-radius: 50px;
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.paginas {
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+
+.indicador {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(138, 99, 210, 0.3);
+    border: 2px solid #8a63d2;
+    border-radius: 50%;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.botonPag1 {
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.botonPag1 img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.botonPag1.active img {
+    opacity: 1;
+    filter: brightness(1.2);
+}
+
+.botonPag1:hover img {
+    opacity: 0.9;
+    transform: scale(1.1);
+}
+
+/* ========== CONTENEDOR PRINCIPAL ========== */
+.Pagina1 {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 20px 40px;
+}
+
+/* ========== HEADER ========== */
+.headerPrincipal {
+    text-align: center;
+    padding: 80px 20px;
+    margin-bottom: 60px;
+}
+
+.tituloHeader {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--rosaNeon), var(--purpuraElectrico), var(--verdeAcido));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+}
+
+.subtituloHeader {
+    font-size: 1.2rem;
+    color: var(--verdeAcido);
+    opacity: 0.8;
+}
+
+/* ========== TÍTULOS DE SECCIONES ========== */
+.tituloSeccion {
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--doradoMetalico);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* ========== SECCIÓN 1: ARTISTAS INFLUENCIA ========== */
+.artistasQueMeHanInfluenciado {
+    margin-bottom: 100px;
+    padding: 60px 0;
+}
+
+.collageArtistas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.tarjetaArtista {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.tarjetaArtista.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tarjetaArtista:hover {
+    border-color: var(--purpuraElectrico);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(131, 56, 236, 0.4);
+}
+
+.contenedorImagen {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background: var(--azulProfundo);
+}
+
+.imagenArtista {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tarjetaArtista:hover .imagenArtista {
+    transform: scale(1.15);
+}
+
+.infoArtista {
+    padding: 25px;
+}
+
+.nombreArtista {
+    font-size: 1.5rem;
+    color: var(--rosaNeon);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.descripcionArtista {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ========== SECCIÓN 2: POR QUÉ ME GUSTA ========== */
+.explicarPorQueMeGusta {
+    margin-bottom: 100px;
+    padding: 60px 0;
+}
+
+.bloqueExplicacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s ease;
+}
+
+.bloqueExplicacion.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.imagenExplicacion {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid var(--verdeAcido);
+}
+
+.imagenExplicacion img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.textoExplicacion {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border-left: 5px solid var(--rosaNeon);
+}
+
+/* ========== SECCIÓN 3: TIEMPO DEDICADO ========== */
+.tiempoDedicadoMusica {
+    margin-bottom: 100px;
+    padding: 80px 0;
+}
+
+.estadisticasMusica {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.8s ease;
+}
+
+.estadisticasMusica.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.itemEstadistica {
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(131, 56, 236, 0.2), rgba(255, 0, 110, 0.2));
+    border-radius: 20px;
+    border: 2px solid var(--purpuraElectrico);
+}
+
+.numeroGrande {
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--doradoMetalico);
+    margin-bottom: 15px;
+    text-shadow: 0 0 30px rgba(255, 214, 10, 0.5);
+}
+
+.textoEstadistica {
+    font-size: 1.1rem;
+    color: var(--verdeAcido);
+    font-weight: 500;
+}
+
+/* ========== FOOTER ========== */
+.footerPrincipal {
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--verdeAcido);
+    font-size: 1.2rem;
+    border-top: 2px solid var(--purpuraElectrico);
+    margin-top: 80px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .tituloHeader {
+        font-size: 2.5rem;
+    }
+    
+    .tituloSeccion {
+        font-size: 2rem;
+    }
+    
+    .bloqueExplicacion {
+        grid-template-columns: 1fr;
+    }
+    
+    .numeroGrande {
+        font-size: 3.5rem;
+    }
+    
+    .collageArtistas {
+        grid-template-columns: 1fr;
+    }
+}
