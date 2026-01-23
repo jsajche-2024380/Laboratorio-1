@@ -20,3 +20,20 @@ function posicionarIndicador() {
 }
 
 window.addEventListener('load', posicionarIndicador);
+
+function animarAlScroll() {
+    const elementos = document.querySelectorAll('.animacionFade, .bloqueBiografia, .bloquePasiones, .bloqueReflexion');
+    elementos.forEach(elemento => {
+        const posicion = elemento.getBoundingClientRect().top;
+        const ventana = window.innerHeight;
+        if (posicion < ventana * 0.85) {
+            elemento.classList.add('visible');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    animarAlScroll();
+    window.addEventListener('scroll', animarAlScroll);
+    setTimeout(animarAlScroll, 100);
+});
