@@ -85,5 +85,229 @@ h1 {
     opacity: 0.9;
     transform: scale(1.1);
 }
+.bloqueBiografia {
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+ 
+.bloqueBiografia.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+ 
+.contenidoBloque {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+ 
+.bloqueInvertido .contenidoBloque {
+    direction: rtl;
+}
+ 
+.bloqueInvertido .textoBloque,
+.bloqueInvertido .imagenBloque {
+    direction: ltr;
+}
+ 
+.textoBloque {
+    padding: 20px;
+}
+ 
+.tituloBloque {
+    font-size: 2.2rem;
+    color: var(--rosaNeon);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+ 
+.parrafoBiografia {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+ 
+.imagenBloque {
+    width: 100%;
+    text-align: center;
+}
+ 
+.imagenBloque img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid var(--purpuraElectrico);
+    transition: transform 0.3s ease;
+}
+ 
+.imagenBloque img:hover {
+    transform: scale(1.05);
+}
+ 
+.pieImagen {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--verdeAcido);
+    font-style: italic;
+}
 
-
+.bloquePasiones {
+    margin-bottom: 80px;
+    padding: 60px 40px;
+    background: rgba(131, 56, 236, 0.05);
+    border-radius: 20px;
+    border: 2px solid var(--purpuraElectrico);
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.8s ease;
+}
+ 
+.bloquePasiones.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+ 
+.tituloPasiones {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--doradoMetalico);
+    margin-bottom: 50px;
+    font-weight: 800;
+}
+ 
+.gridPasiones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+ 
+.tarjetaPasion {
+    text-align: center;
+    padding: 40px 25px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+ 
+.tarjetaPasion:hover {
+    border-color: var(--verdeAcido);
+    transform: translateY(-10px);
+}
+ 
+.iconoPasion {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+ 
+.nombrePasion {
+    font-size: 1.5rem;
+    color: var(--rosaNeon);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+ 
+.descripcionPasion {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+}
+ 
+.bloqueReflexion {
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+ 
+.bloqueReflexion.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+ 
+.cajaReflexion {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    background: linear-gradient(135deg, rgba(255, 0, 110, 0.1), rgba(131, 56, 236, 0.1));
+    padding: 50px;
+    border-radius: 20px;
+    border: 2px solid var(--rosaNeon);
+}
+ 
+.imagenReflexion img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 3px solid var(--verdeAcido);
+}
+ 
+.textoReflexion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ 
+.tituloReflexion {
+    font-size: 2rem;
+    color: var(--doradoMetalico);
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+ 
+.parrafoReflexion {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+    font-style: italic;
+    line-height: 1.7;
+}
+ .animacionFade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+ 
+.animacionFade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (max-width: 968px) {
+    .contenidoBloque {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .bloqueInvertido .contenidoBloque {
+        direction: ltr;
+    }
+    .cajaReflexion {
+        grid-template-columns: 1fr;
+    }
+    .tituloBiografia {
+        font-size: 2.5rem;
+    }
+    .tituloBloque {
+        font-size: 1.8rem;
+    }
+}
+ 
+@media (max-width: 640px) {
+    .Pagina2 {
+        padding: 100px 20px 40px;
+    }
+    .contenidoBloque {
+        padding: 25px;
+    }
+    .gridPasiones {
+        grid-template-columns: 1fr;
+    }
+}
