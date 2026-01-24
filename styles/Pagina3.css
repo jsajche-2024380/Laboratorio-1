@@ -1,23 +1,27 @@
+:root {
+    --azulOscuro: #0f2a44;
+    --azul: #1f4e79;
+    --corinto: #7a1f1f;
+    --naranja: #f28c28;
+    --amarillo: #f7c948;
+    --gris: #f4f6f8;
+}
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: Arial, sans-serif;
-    background: #0f3460;    
-}
-.Pagina3 {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 120px 20px 40px;
-    color: white;
-}   
-h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
+body {
+    font-family: Arial, 'Segoe UI', sans-serif;
+    background: var(--gris);
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+} 
+
+
 .IslaPaginas {
     position: fixed;
     top: 20px;
@@ -78,5 +82,362 @@ h1 {
     transform: scale(1.1);
 }   
 
+.Pagina3 {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+eroKinal {
+    width: 100%;
+    height: 500px;
+    background-image: url('../img/hero-kinal.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroKinal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 42, 68, 0.7);
+}
+
+.contenidoHero {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.logoHero {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.tituloHero {
+    font-size: 3.5rem;
+    color: white;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+/* ========== SECCIÓN PRESENTACIÓN ========== */
+.seccionPresentacion {
+    background: white;
+    padding: 80px 20px;
+}
+
+.contenedorPresentacion {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.selloTrabajo img {
+    width: 100%;
+    max-width: 300px;
+}
+
+.tituloPresentacion {
+    font-size: 2.5rem;
+    color: var(--azul);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.parrafoPresentacion {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* ========== SECCIÓN PROGRAMAS ========== */
+.seccionProgramas {
+    background: var(--gris);
+    padding: 80px 20px;
+}
+
+.gridProgramas {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.tarjetaPrograma {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.tarjetaPrograma:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.imagenPrograma {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.imagenPrograma img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tarjetaPrograma:hover .imagenPrograma img {
+    transform: scale(1.1);
+}
+
+.infoPrograma {
+    padding: 30px;
+}
+
+.etiquetaPrograma {
+    display: inline-block;
+      padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+      font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: white;
+}
+  
+.etiquetaCorinto {
+     background: var(--corinto);
+} 
+
+.etiquetaAzul {
+    background: var(--azul);
+}
+
+.etiquetaAmarillo {
+    background: var(--amarillo);
+
+    color: var(--azulOscuro);
+}
+
+.descripcionPrograma {
+    font-size: 1rem;
+    color: #666;
+
+    line-height: 1.7;
+}
 
 
+
+
+.seccionEstadisticas {
+    background: var(--azulOscuro);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+
+
+.tituloEstadisticas {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+.gridEstadisticas {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.cajaEstadistica {
+    padding: 50px 30px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.cajaEstadistica:hover {
+    transform: scale(1.05);
+}
+
+.estiloAmarillo {
+    background: var(--amarillo);
+}
+
+.estiloCorinto {
+    background: var(--corinto);
+}
+
+.estiloAzul {
+    background: var(--azul);
+}
+
+.estiloNaranja {
+    background: var(--naranja);
+}
+
+.numeroEstadistica {
+    font-size: 4rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.textoEstadistica {
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+}
+
+
+.seccionAlumnos {
+    background: white;
+    padding: 80px 20px;
+}
+
+.contenedorAlumnos {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.imagenAlumnos img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.tituloAlumnos {
+    font-size: 2.5rem;
+    color: var(--azul);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.subtituloAlumnos {
+    font-size: 1.8rem;
+    color: var(--corinto);
+    margin-bottom: 20px;
+}
+
+.parrafoAlumnos {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.iconoTrabajos {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--amarillo);
+    color: var(--azulOscuro);
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+
+.footerKinal {
+    background: var(--azulOscuro);
+    color: white;
+    padding: 60px 20px 20px;
+}
+
+.contenedorFooter {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.columnaFooter {
+    text-align: center;
+}
+
+.tituloFooter {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--amarillo);
+
+}
+
+.columnaFooter p {
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.logoFooter {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+.textoFooter {
+    font-size: 1.2rem;
+    font-weight:  700;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.animacionHover {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 968px) {
+    .contenedorPresentacion,
+    .contenedorAlumnos {
+        grid-template-columns: 1fr;
+    }
+    
+    .tituloHero {
+        font-size: 2.5rem;
+    }
+    
+    
+    .gridProgramas {
+        grid-template-columns: 1fr;
+    }
+    
+    .gridEstadisticas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .Pagina3 {
+        padding-top: 100px;
+    }
+    
+    .heroKinal {
+        height: 400px;
+    }
+     
+
+    .gridEstadisticas {
+        grid-template-columns: 1fr;
+    }
+}
