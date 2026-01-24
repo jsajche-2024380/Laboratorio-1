@@ -85,6 +85,12 @@ h1 {
     opacity: 0.9;
     transform: scale(1.1);
 }
+.headerBiografia {
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 80px;
+}
+
 .bloqueBiografia {
     margin-bottom: 80px;
     opacity: 0;
